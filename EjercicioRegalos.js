@@ -1,41 +1,27 @@
 const carta = 'bici coche balón _playstation bici coche peluche';
 
-// ELIMINAR ESPACIOS O CONVERTIR CADENA A ARRAY
+// ELIMINAR ESPACIOS y CONVERTIR CADENA A ARRAY
 // _ SIGNIFICA QUE ESE REGALO NO CUENTA
 // GUARDAR LOS REGALOS EN UNA LISTA
 
 
-function listGifts(carta) {
-    const palabras = carta.trim().split(/\s+/);
-
-    // Objeto para almacenar los regalos y su cantidad
-    const regalos = {};
-  
-    // Recorrer cada palabra de la carta
-    for (let i = 0; i < palabras.length; i++) {
-      // Obtener la palabra actual
-      const palabra = palabras[i];
-  
-      // Verificar si la palabra comienza con un guion bajo
-      if (!palabra.startsWith('_')) {
-        // Incrementar la cantidad del regalo en el objeto
-        if (regalos.hasOwnProperty(palabra)) {
-          regalos[palabra]++;
-        } else {
-          regalos[palabra] = 1;
-        }
+export default function listGifts(letter) {
+//     creando arreglo borrando espacios
+const palabras = letter.trim().split(/\s+/);
+//     creando un objeto vacio
+  const regalos = {};
+//     recorriendo el arreglo para luego chequear si la palabra comieza con guion bajo
+  for (let i = 0; i < palabras.length; i++) {
+    const palabra = palabras[i];
+//       preguntamos si la palabra no empieza con guion bajo
+    if (!palabra.startsWith('_')) {
+//         verificamos si el objeto contiene el elemento y si es asi incrementa la cantidad del mismo
+      if (regalos.hasOwnProperty(palabra)) {
+        regalos[palabra]++;
+      } else {
+        regalos[palabra] = 1;
       }
     }
-  
-    return regalos;
   }
-  
-  // Ejemplo de uso
-  
-  
-  
-  
-  
-  
-
-console.log(listGifts(carta));
+  return regalos;
+}
