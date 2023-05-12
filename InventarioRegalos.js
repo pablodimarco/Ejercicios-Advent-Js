@@ -1,6 +1,6 @@
 const a1 = ['bici', 'coche', 'bici', 'bici']
 const a2 = ['coche', 'bici', 'muñeca', 'coche']
-const a3 = ['bici', 'pc', 'pc']
+const a3 = ['bici', 'coche', 'coche']
 
 // Crea una función getGiftsToRefill que reciba tres Array como parámetros.
 // La función debe devolver un Array con los regalos que hay que reponer.
@@ -9,6 +9,7 @@ const a3 = ['bici', 'pc', 'pc']
 // Si hay más de un regalo que reponer, la función debe devolver un Array con todos los regalos que hay que reponer.
 
 function getGiftsToRefill(a1, a2, a3) {
+
     let repuestos = [];
 
     for (let i = 0; i < a1.length; i++) { 
@@ -33,6 +34,7 @@ function getGiftsToRefill(a1, a2, a3) {
     repuestos = repuestos.filter((element, index) => repuestos.indexOf(element) === index)
 
     return repuestos;
+
 }
 
 

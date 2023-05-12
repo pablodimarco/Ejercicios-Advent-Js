@@ -7,6 +7,7 @@ const ovejas = [
     { name: 'Nnnnnnnn', color: 'rojo'}
   ]
 
+  console.log(ovejas);
   function contarOvejas(ovejas) {
     return ovejas.filter( oveja => {
      return oveja.color === 'rojo' && oveja.name.toLowerCase().includes('n') && oveja.name.toLowerCase().includes('a')
@@ -14,5 +15,3 @@ const ovejas = [
   }
 
   console.log(contarOvejas(ovejas))
-
-  console.log(ovejas);
